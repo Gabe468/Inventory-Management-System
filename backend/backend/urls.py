@@ -20,7 +20,7 @@ from inventoryManage import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'items', views.InventoryView, 'item')
+router.register(r'item', views.InventoryView, 'item')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls))
