@@ -4,12 +4,12 @@ import ListItem from '../components/ListItem'
 const InventoryListPage = () => {
     let [items, setInventory] = useState([])
 
-    useEffect(()=>{
+    useEffect(() => {
       getInventory()
     }, [])
  
     let getInventory = async () => {
-      let response = await fetch('http://127.0.0.1:8000/api/item/')
+      let response = await fetch('/api/item/')
       let data = await response.json()
       setInventory(data)
 
@@ -18,9 +18,9 @@ const InventoryListPage = () => {
   return (
     <div>
         <div className='inventory-list'>
-              {items.map((item, index) => (
-                <ListItem key={index} item={item} />
-            ))}
+        {items.map((item, index) => (
+                    <ListItem key={index} item={item} />
+                ))}
         </div>
     </div>
   )
