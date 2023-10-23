@@ -11,10 +11,12 @@ import InventoryPage from "./pages/InventoryPage";
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="container">
+      <div className="app">
         <Header/ >
         <Route path="/" exact component={InventoryListPage}/>
         <Route path="/item/:id" exact component={InventoryPage}/>
+      </div>
       </div>
     </Router>
   );

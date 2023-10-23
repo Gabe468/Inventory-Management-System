@@ -6,7 +6,7 @@ const InventoryPage = ({ match }) => {
     let [item , setItem] = useState(null)
 
     useEffect(() => {
-        getItem()
+      getItem()
     }, [itemId])
 
     let getItem = async () => {
@@ -16,7 +16,7 @@ const InventoryPage = ({ match }) => {
     }
 
   return (
-    <div>
+    <div className='item-list'>
         <p>{item?.id}</p>
         <p>{item?.title}</p>
         <p>{item?.description}</p>
