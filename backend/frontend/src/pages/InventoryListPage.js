@@ -17,11 +17,13 @@ const InventoryListPage = () => {
 
   return (
     <div className='item'>
-      <div className="item-header">
-                <h2 className="item-title">Inventory</h2>
-                <p className="item-count">{items.length}</p>
-                <h2 className="item-title"> Search</h2>
-      </div>
+          <div className="item-header">
+                <div className="item-title">
+                  <h2>Inventory</h2>
+                  <h3 style = {{color:'gray'}}>{items.length}</h3>
+                </div>
+                <h2 className="last-item-title"> Search</h2>
+          </div>
         <div className='item-list'>
         {items.map((item, index) => (
                     <ListItem key={index} item={item} />
