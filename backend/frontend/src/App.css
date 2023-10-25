@@ -106,26 +106,6 @@ a {
   padding: 16px;
 }
 
-  
-.item-title{
-  display: flex;
-  color: rgb(12, 12, 12);
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.item-title h3{
-  margin-left: 10px ;
-  margin-top: 1px;
-  font-size: 20px;
-}
-.last-item-title{
-  display: flex;
-  color: rgb(12, 12, 12);
-  font-size: 24px;
-  font-weight: 600;
-}
-
 .item-count {
   position:fixed;
   font-size: 18px;
@@ -133,8 +113,8 @@ a {
 }
   
 .item-list {
-  padding: 10px;
-  margin: 16px ;
+  padding: 0px 10px ;
+  margin: 0px 16px 0px 16px;
   height: 70vh;
   overflow-y: auto;
   scrollbar-width: none; /* Firefox */
@@ -195,11 +175,33 @@ a {
   fill: var(--color-bg);
 }
 
+.item-title{
+  display: flex;
+  color: rgb(12, 12, 12);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.item-title h3{
+  margin-left: 5px ;
+  padding-top: 3px;
+  font-size: 20px;
+}
+.last-item-title{
+  display: flex;
+  color: rgb(12, 12, 12);
+  font-size: 24px;
+  font-weight: 600;
+}
+
 .item-header {
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px 10px 0px;
+  padding: 10px 0px 5px;
+  border-bottom: 2px solid var(--color-dark);
+  width: 50%;
 }
 
 
