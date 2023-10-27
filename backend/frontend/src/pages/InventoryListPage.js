@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import ListItem from '../components/ListItem'
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import { Link } from 'react-router-dom'
 
 const InventoryListPage = () => {
     let [items, setInventory] = useState([])
@@ -25,9 +31,32 @@ const InventoryListPage = () => {
                 <h2 className="last-item-title"> Search</h2>
           </div>
         <div className='item-list'>
-        {items.map((item, index) => (
-                    <ListItem key={index} item={item} />
+        <Table sx={{ minWidth: 650 }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>ID</TableCell>
+              <TableCell>Title</TableCell>
+              <TableCell>Description</TableCell>
+              <TableCell>SKU</TableCell>
+              <TableCell>Count</TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+            </TableRow>
+          </TableHead>
+        <TableBody>
+        {items.map((item) => (
+                    <TableRow>
+                    <TableCell >{item?.id}</TableCell>
+                    <TableCell >{item?.title}</TableCell>
+                    <TableCell >{item?.description}</TableCell>
+                    <TableCell >{item?.sku}</TableCell>
+                    <TableCell >{item?.count}</TableCell>
+                    <TableCell >view</TableCell>
+                    <TableCell >edit</TableCell>
+                    </TableRow>
                 ))}
+        </TableBody>
+        </Table>
         </div>
     </div>
   )
