@@ -31,28 +31,30 @@ const InventoryListPage = () => {
                 <h2 className="last-item-title"> Search</h2>
           </div>
         <div className='item-list'>
-        <Table sx={{ minWidth: 650 }}>
+        <Table size="small">
           <TableHead>
-            <TableRow>
+            <TableRow className='table-header'>
               <TableCell>ID</TableCell>
               <TableCell>Title</TableCell>
               <TableCell>Description</TableCell>
               <TableCell>SKU</TableCell>
               <TableCell>Count</TableCell>
               <TableCell></TableCell>
-              <TableCell></TableCell>
             </TableRow>
           </TableHead>
         <TableBody>
         {items.map((item) => (
-                    <TableRow>
+                    <TableRow className='item-table'>
                     <TableCell >{item?.id}</TableCell>
                     <TableCell >{item?.title}</TableCell>
                     <TableCell >{item?.description}</TableCell>
                     <TableCell >{item?.sku}</TableCell>
                     <TableCell >{item?.count}</TableCell>
-                    <TableCell >view</TableCell>
-                    <TableCell >edit</TableCell>
+                    <TableCell >
+                    <button className='view'>view</button>
+                    <button className='edit'>edit</button>
+                    <button className='remove'>remove</button>
+                    </TableCell>
                     </TableRow>
                 ))}
         </TableBody>

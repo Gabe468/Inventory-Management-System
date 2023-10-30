@@ -80,7 +80,7 @@ a {
   padding: 16px;
   justify-content: space-between;
   background-color: var(--color-lighter);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 .app-header h1 {
@@ -196,10 +196,11 @@ a {
 
 .item-header {
   margin: 0 auto;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px 0px 5px;
+  padding: 15px 0px 5px;
   border-bottom: 2px solid var(--color-dark);
   width: 50%;
 }
@@ -232,4 +233,54 @@ a {
 
 .item textarea::-webkit-scrollbar {
   display: none;
+}
+
+.view{
+  background-color: #4CAF50;  
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.edit{
+  background-color: #4c90af;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.remove{
+  background-color: #f44336;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.table-header{
+  font-size: 30px;
+}
+
+.item-table{
+  height: 10px;
 }
