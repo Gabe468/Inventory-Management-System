@@ -51,8 +51,12 @@ const InventoryListPage = () => {
                     <TableCell >{item?.sku}</TableCell>
                     <TableCell >{item?.count}</TableCell>
                     <TableCell >
+                    <Link to={`/item/${item.id}`}>
                     <button className='view'>view</button>
+                    </Link>
+                    <Link to={`/item/${item.id}/edit`}>
                     <button className='edit'>edit</button>
+                    </Link>
                     <button className='remove'>remove</button>
                     </TableCell>
                     </TableRow>

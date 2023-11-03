@@ -26,4 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('', TemplateView.as_view(template_name='index.html')),
+    path('api/item/<str:pk>/delete/', views.deleteItem, name="delete-item"),
+    path('api/item/<str:pk>/update/', views.updateItem, name="update-item"),
 ]

@@ -216,20 +216,15 @@ a {
 }
 
 .item textarea {
-  background-color: var(--color-white);
-  border: none;
-  padding: 16px 12px;
-  width: 100%;
-  height: 70vh;
-  resize: none;
-  scrollbar-width: none; /* Firefox */
+  width: 20;
+  height: 60px;
 }
 
-.item textarea:active,
-.item textarea:focus {
-  outline: none;
-  border: none;
+.item input {
+  width: 20;
+  height: 20px;
 }
+
 
 .item textarea::-webkit-scrollbar {
   display: none;
@@ -284,3 +279,16 @@ a {
 .item-table{
   height: 10px;
 }
+
+.item-edit{
+  width: 50px;
+}
+
+.item-group{
+  margin-top: 10%;
+  text-align: center;
+}
+
+ textarea {
+  resize: none;
+ }

@@ -7,6 +7,7 @@ import './App.css';
 import Header from './components/Header'
 import InventoryListPage from './pages/InventoryListPage'
 import InventoryPage from "./pages/InventoryPage";
+import EditItemPage from "./pages/EditItemPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Header/ >
         <Route path="/" exact component={InventoryListPage}/>
         <Route path="/item/:id" exact component={InventoryPage}/>
+        <Route path="/item/:id/edit" exact component={EditItemPage}/>
       </div>
       </div>
     </Router>
