@@ -8,11 +8,13 @@ import Header from './components/Header'
 import InventoryListPage from './pages/InventoryListPage'
 import InventoryPage from "./pages/InventoryPage";
 import EditItemPage from "./pages/EditItemPage";
+import SideBar from "./components/SideBar";
 
 function App() {
   return (
     <Router>
       <div className="container">
+        <SideBar/ >
       <div className="app">
         <Header/ >
         <Route path="/" exact component={InventoryListPage}/>

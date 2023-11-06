@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import ListItem from '../components/ListItem'
+
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const InventoryListPage = () => {
     let [items, setInventory] = useState([])
@@ -22,14 +22,14 @@ const InventoryListPage = () => {
     }
 
   return (
-    <div className='item'>
-          <div className="item-header">
-                <div className="item-title">
-                  <h2>Inventory</h2>
-                  <h3 style = {{color:'gray'}}>{items.length}</h3>
-                </div>
-                <h2 className="last-item-title"> Search</h2>
-          </div>
+    <div>
+    <div className="item-header">
+      <div className="item-title">
+        <h2>Inventory</h2>
+        <h3 style = {{color:'gray'}}>{items.length}</h3>
+      </div>
+      <h2 className="last-item-title"> Search</h2>
+    </div>
         <div className='item-list'>
         <Table size="small">
           <TableHead>

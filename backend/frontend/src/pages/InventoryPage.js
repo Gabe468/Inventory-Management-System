@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import { useNavigate } from "react-router-dom";
 
 const InventoryPage = ({ match, history }) => {
 
@@ -15,10 +14,6 @@ const InventoryPage = ({ match, history }) => {
         let data = await response.json()
         setItem(data)
     }
-    const navigate = useNavigate();
-    const goBack = () => {
-      navigate(-1);
-    };
 
     let deleteItem = async ()=>{
       fetch('/api/item/${itemId}/delete/',{
@@ -31,22 +26,32 @@ const InventoryPage = ({ match, history }) => {
     }
 
   return (
-    <div className='item'>
+    <div>
       <div className='item-header'>
-        <button onClick={goBack}>back</button>
         <button onClick={deleteItem}>Delete</button>
       </div>
-      <div className='item-group'>
-      <h3 className='item'>ID: {item?.id}</h3>
-      <h3 className='item'>Title:</h3>
-      <h3 className='item'>{item?.title}</h3>
-      <h3 className='item'>Description:</h3>
-      <h3 className='item'>{item?.Description}</h3>
-      <h3 className='item'>SKU:</h3>
-      <h3 className='item'>{item?.sku}</h3>
-      <h3 className='item'>Count:</h3>
-      <h3 className='item'>{item?.count}</h3>
-    </div>
+      <table style={{"border-spacing": "20px 10px"}} className='item-group' >
+          <tr>
+            <td className='item'>ID: </td>
+            <td className='item'>{item?.id}</td>
+          </tr>
+          <tr>
+            <td className='item'>Title:</td>
+            <td className='item'>{item?.title}</td>
+          </tr>
+          <tr>
+            <td className='item'>Description:</td>
+            <td className='item'>{item?.description}</td>
+          </tr>
+          <tr>
+            <td className='item'>SKU:</td>
+            <td className='item'>{item?.sku}</td>
+          </tr>
+          <tr>
+            <td className='item'>Count:</td>
+            <td className='item'>{item?.count}</td>
+          </tr>
+    </table>
     </div>
   )
 }
