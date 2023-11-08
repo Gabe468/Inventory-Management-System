@@ -19,12 +19,13 @@ const InventoryPage = ({ match, history }) => {
 
     let createItem = async () => {
       fetch(`/api/item/create/`,{
-        method: "POST",
+        method: 'POST',
         headers:{
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(item)
       })
+      history.push('/')
     }
 
       let deleteItem = async ()=>{
@@ -71,7 +72,6 @@ const InventoryPage = ({ match, history }) => {
         </table>
         ): (
           <div className='item-group'>
-          <h1 className='item'>{item?.id}</h1>
           <h1 className='item'>Title:</h1>
           <input className='item' onChange={(e) => {setItem({...item, 'title': e.target.value})}} value={item?.title}></input>
           <h3 className='item'>Description:</h3>
