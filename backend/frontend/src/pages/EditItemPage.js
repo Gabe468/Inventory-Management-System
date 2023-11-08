@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
 const EditItemPage = ({ match, history }) => {
-
     let itemId = match.params.id
     let [item , setItem] = useState(null)
 
@@ -23,7 +22,6 @@ const EditItemPage = ({ match, history }) => {
         },
         body: JSON.stringify(item)
       })
-      console.log(item);
     }
 
     let handleSumbit = () => {
@@ -32,7 +30,7 @@ const EditItemPage = ({ match, history }) => {
     }
 
   return (
-    <div>
+    <div className='app-body'>
     <div className='item-header'>
         <button onClick={handleSumbit}>Update</button>
     </div>
