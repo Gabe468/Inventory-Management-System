@@ -11,6 +11,22 @@ class InventoryView(viewsets.ModelViewSet):
     serializer_class = InventorySerializer
     queryset = Inventory.objects.all()
     
+@api_view(['POST'])
+def createItem(request):
+    data = request.data
+    item = Inventory.objects.create(
+        title = data['title'],
+        description = data['description'],
+        sku = data['sku'],
+        count = data['count']
+    )
+    serializer = InventorySerializer(instance = item, data=data)
+    
+    if serializer.is_valid():
+        serializer.save()
+        
+    return Response(serializer.data)
+    
 @api_view(['DELETE'])
 def deleteItem(request, pk):
     item = Inventory.objects.get(id=pk)

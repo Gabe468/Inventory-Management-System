@@ -1,4 +1,4 @@
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import React from 'react'
 import DarkToggle from './DarkToggle';
@@ -11,20 +11,33 @@ function SideBar() {
   return (
     <div style={{ display: "flex", height: "100vh"}}>
       <Sidebar width="200px" className="app">
-        <Menu>
+      <Menu
+        menuItemStyles={{
+          button: {
+            '&:hover': {
+               backgroundColor: "#335B8C !important",
+               color: "white !important",
+               borderRadius: "8px !important",
+               fontWeight: "bold !important",
+            }
+         }
+        }}
+        >
           <Link to="/">
-          <MenuItem rootStyles={{
-            backgroundColor: '#94cbffc5',
-        }}>
-            <h2>Inventory Manager</h2>
-          </MenuItem>
+          <h1 className='sidebar-header'>
+            Inventory Manager
+          </h1>
           </Link>
           <MenuItem icon={<InfoIcon />}> About </MenuItem>
           <MenuItem icon={<PersonIcon />}> User </MenuItem>
+          <Link to="/">
           <MenuItem icon={<InventoryIcon />}> Inventory </MenuItem>
+          </Link>
           <MenuItem icon={<SettingsIcon />}> Settings </MenuItem>
-          <MenuItem ><DarkToggle/ ></MenuItem>
-        </Menu>
+        </Menu>\
+        <SidebarFooter>
+
+        </SidebarFooter>
       </Sidebar>
     </div>
   )

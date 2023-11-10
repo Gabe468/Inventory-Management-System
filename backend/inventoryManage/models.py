@@ -7,8 +7,3 @@ class Inventory(models.Model):
     description = models.CharField(max_length = 200)
     sku = models.CharField(max_length=30)
     count = models.PositiveIntegerField()
-
-    def __str__(self):
- 
-        #it will return the title
-        return self.title

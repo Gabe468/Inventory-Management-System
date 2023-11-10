@@ -434,3 +434,10 @@ a {
   -moz-box-shadow: 0px 0px 5px 5px #0099E0;
   box-shadow: 0px 0px 5px 5px #0099E0;
 }
+
+.sidebar-header{
+  background-color: #94cbffc5;
+  padding: 10px;
+  font-size: 29px;
+  font-weight: bold;
+}
