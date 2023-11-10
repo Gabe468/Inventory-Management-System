@@ -10,7 +10,7 @@ const InventoryPage = ({ match, history }) => {
     }, [itemId])
 
     let getItem = async () => {
-      if (itemId == 'new') return
+      if (itemId === 'new') return
 
         let response = await fetch(`/api/item/${itemId}/`)
         let data = await response.json()

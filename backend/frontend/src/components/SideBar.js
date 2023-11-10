@@ -1,7 +1,6 @@
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import { Link } from 'react-router-dom';
 import React from 'react'
-import DarkToggle from './DarkToggle';
 import InventoryIcon from '@mui/icons-material/Inventory';
 import PersonIcon from '@mui/icons-material/Person';
 import InfoIcon from '@mui/icons-material/Info';
@@ -34,10 +33,7 @@ function SideBar() {
           <MenuItem icon={<InventoryIcon />}> Inventory </MenuItem>
           </Link>
           <MenuItem icon={<SettingsIcon />}> Settings </MenuItem>
-        </Menu>\
-        <SidebarFooter>
-
-        </SidebarFooter>
+        </Menu>
       </Sidebar>
     </div>
   )

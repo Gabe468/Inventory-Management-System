@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-
-# Create your views here.
 from rest_framework import viewsets
 from .serializers import InventorySerializer
 from .models import Inventory
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 class InventoryView(viewsets.ModelViewSet):
     serializer_class = InventorySerializer
@@ -43,3 +43,15 @@ def updateItem(request, pk):
         serializer.save()
         
     return Response(serializer.data)
+
+class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+    @classmethod
+    def get_token(cls, user):
+        token = super().get_token(user)
+
+        token['name'] = user.name
+
+        return token
+    
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer

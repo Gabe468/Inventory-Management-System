@@ -4,12 +4,11 @@ import {
   Route,
 } from "react-router-dom";
 import './App.css';
-import Header from './components/Header'
 import InventoryListPage from './pages/InventoryListPage'
 import InventoryPage from "./pages/InventoryPage";
 import EditItemPage from "./pages/EditItemPage";
 import SideBar from "./components/SideBar";
-import DarkToggle from "./components/DarkToggle";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -20,6 +19,7 @@ function App() {
       </div>
       <div className="app">
         <Route path="/" exact component={InventoryListPage}/>
+        <Route path="/login" exact component={LoginPage}/>
         <Route path="/item/:id" exact component={InventoryPage}/>
         <Route path="/item/:id/edit" exact component={EditItemPage}/>
       </div>
