@@ -9,19 +9,19 @@ import InventoryPage from "./pages/InventoryPage";
 import EditItemPage from "./pages/EditItemPage";
 import SideBar from "./components/SideBar";
 import LoginPage from "./pages/LoginPage";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   return (
     <Router>
       <div className="container">
-      <div className="side-bar">
-      <SideBar/ >
-      </div>
+      {window.location.pathname != '/login' ? <div className="side-bar"><SideBar/ ></div> : null }
       <div className="app">
-        <Route path="/" exact component={InventoryListPage}/>
+        <PrivateRoute path="/" exact component={InventoryListPage}/>
         <Route path="/login" exact component={LoginPage}/>
-        <Route path="/item/:id" exact component={InventoryPage}/>
-        <Route path="/item/:id/edit" exact component={EditItemPage}/>
+        <PrivateRoute path="/item/:id" exact component={InventoryPage}/>
+        <PrivateRoute path="/item/:id/edit" exact component={EditItemPage}/>
+
       </div>
       </div>
     </Router>

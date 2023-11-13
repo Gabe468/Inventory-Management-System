@@ -20,15 +20,16 @@ from inventoryManage import views
 from rest_framework import routers
 from django.views.generic import TemplateView
 from rest_framework_simplejwt.views import (
-    MyTokenObtainPairView,
+    TokenObtainPairView,
     TokenRefreshView,
 )
+
 
 router = routers.DefaultRouter()
 router.register(r'item', views.InventoryView, 'item')
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('api/item/create/', views.createItem, name ="create-item"),
     path('api/', include(router.urls)),
