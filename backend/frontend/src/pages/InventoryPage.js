@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+import AuthContext from '../context/AuthContext'
 
 const InventoryPage = ({ match, history }) => {
 
     let itemId = match.params.id
     let [item , setItem] = useState(null)
+    let {authTokens, logoutUser} = useContext(AuthContext)
 
     useEffect(() => {
       getItem()
@@ -12,9 +14,22 @@ const InventoryPage = ({ match, history }) => {
     let getItem = async () => {
       if (itemId === 'new') return
 
-        let response = await fetch(`/api/item/${itemId}/`)
+        let response = await fetch(`/api/item/${itemId}/`, {
+          method:'GET',
+          headers:{
+              'Content-Type':'application/json',
+              'Authorization':'Bearer ' + String(authTokens.access)
+          }
+      })
+
         let data = await response.json()
         setItem(data)
+
+        if(response.status === 200){
+          setItem(data)
+      }else if(response.statusText === 'Unauthorized'){
+          logoutUser()
+      }
     }
 
     let createItem = async () => {
@@ -49,6 +64,10 @@ const InventoryPage = ({ match, history }) => {
       </div>
       {itemId !== "new" ? (
         <table style={{"border-spacing": "20px 10px"}} className='item-group' >
+          <tr>
+            <td className='item'>Created By: </td>
+            <td className='item'>{item?.user}</td>
+          </tr>
           <tr>
             <td className='item'>ID: </td>
             <td className='item'>{item?.id}</td>

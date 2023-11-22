@@ -66,6 +66,7 @@ const InventoryListPage = ({ match, history }) => {
               <TableCell>Description</TableCell>
               <TableCell>SKU</TableCell>
               <TableCell>Count</TableCell>
+              <TableCell>Creator</TableCell>
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
@@ -77,6 +78,7 @@ const InventoryListPage = ({ match, history }) => {
                     <TableCell >{item?.description}</TableCell>
                     <TableCell >{item?.sku}</TableCell>
                     <TableCell >{item?.count}</TableCell>
+                    <TableCell >{item?.user}</TableCell>
                     <TableCell >
                     <Link to={`/item/${item.id}`} className='view'>
                     <VisibilityIcon></VisibilityIcon>
