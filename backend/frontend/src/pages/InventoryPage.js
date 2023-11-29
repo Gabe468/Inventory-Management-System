@@ -36,7 +36,8 @@ const InventoryPage = ({ match, history }) => {
       fetch(`/api/item/create/`,{
         method: 'POST',
         headers:{
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization':'Bearer ' + String(authTokens.access)
         },
         body: JSON.stringify(item)
       })

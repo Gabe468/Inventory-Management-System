@@ -6,6 +6,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import InfoIcon from '@mui/icons-material/Info';
 import SettingsIcon from '@mui/icons-material/Settings';
 import AuthContext from '../context/AuthContext';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function SideBar() {
   let{user, logoutUser} = useContext(AuthContext)
@@ -36,7 +37,7 @@ function SideBar() {
           </Link>
           <MenuItem icon={<SettingsIcon />}> Settings </MenuItem>
           {user ? (
-          <MenuItem onClick={logoutUser} > Logout </MenuItem>
+          <MenuItem onClick={logoutUser} icon={<LogoutIcon />} > Logout </MenuItem>
           ):(
             null
           )}

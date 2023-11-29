@@ -27,7 +27,7 @@ const InventoryListPage = ({ match, history }) => {
 
     const StyledTableRow = styled(TableRow)(({ theme }) => ({
       '&:nth-of-type(odd)': {
-        backgroundColor: theme.palette.action.hover,
+        backgroundColor: '#dedede',
       },
       // hide last border
       '&:last-child td, &:last-child th': {
